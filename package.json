@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "tdd": "jest --watch --verbose",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "dev": "ts-node src/server.ts"
   },
   "keywords": [],
   "author": "",
