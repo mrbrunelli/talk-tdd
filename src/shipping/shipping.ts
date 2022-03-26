@@ -11,10 +11,12 @@ export class Shipping {
   constructor(private readonly calculateShipping: CalculateShipping) {}
 
   getCost(shippingInfo: IShippingInfo) {
-    return this.calculateShipping.calculate(
+    const result = this.calculateShipping.calculate(
       shippingInfo.distance,
       shippingInfo.weight,
       shippingInfo.rate
     );
+
+    return result > 10 ? result : 0;
   }
 }
