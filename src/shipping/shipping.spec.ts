@@ -20,8 +20,13 @@ describe("ShippingService", () => {
 
   test("should return free shipping cost if calculated value is less than R$ 10,00", () => {
     const { sut } = makeSut();
-
-    const result = sut.getCost({ distance: 44, weight: 7 });
+    const result = sut.getCost({ distance: 44, weight: 7, rate: 0.02 });
     expect(result).toBe(0);
+  });
+
+  test("should return the shipping cost amount to be paid by the customer", () => {
+    const { sut } = makeSut();
+    const result = sut.getCost({ distance: 100, weight: 9, rate: 0.02 });
+    expect(result).toBe(18);
   });
 });

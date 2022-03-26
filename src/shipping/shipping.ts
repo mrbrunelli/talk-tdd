@@ -4,6 +4,7 @@ interface IShippingInfo {
   address?: string;
   distance: number;
   weight: number;
+  rate: number;
 }
 
 export class Shipping {
@@ -12,7 +13,8 @@ export class Shipping {
   getCost(shippingInfo: IShippingInfo) {
     return this.calculateShipping.calculate(
       shippingInfo.distance,
-      shippingInfo.weight
+      shippingInfo.weight,
+      shippingInfo.rate
     );
   }
 }
