@@ -40,4 +40,15 @@ describe("ShippingService", () => {
     expect(spy).toBeCalledWith({ distance: 100, weight: 9, rate: 0.02 });
     expect(spy).toHaveReturnedWith(18);
   });
+
+  test("should calls calculate shipping with correclty params", () => {
+    const { sut, calculateShipping } = makeSut();
+    const spy = jest.spyOn(calculateShipping, "calculate");
+
+    sut.getCost({ distance: 100, weight: 9, rate: 0.02 });
+
+    expect(spy).toBeCalledTimes(1);
+    expect(spy).toBeCalledWith(100, 9, 0.02);
+    expect(spy).toHaveReturnedWith(18);
+  });
 });
