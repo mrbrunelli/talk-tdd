@@ -1,16 +1,16 @@
 import { CalculateShipping } from "./calculate-shipping";
 
-interface IShippingInfo {
+type ShippingInfoType = {
   address?: string;
   distance: number;
   weight: number;
   rate: number;
-}
+};
 
 export class Shipping {
   constructor(private readonly calculateShipping: CalculateShipping) {}
 
-  getCost(shippingInfo: IShippingInfo) {
+  getCost(shippingInfo: ShippingInfoType) {
     const result = this.calculateShipping.calculate(
       shippingInfo.distance,
       shippingInfo.weight,
