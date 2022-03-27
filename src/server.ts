@@ -1,10 +1,9 @@
 import fastify from "fastify";
+import { ShippingHandler } from "./shipping/shipping-handler";
 
 const server = fastify({ logger: true });
 
-server.post("/shipping", async (request, reply) => {
-  return request.body;
-});
+server.register(ShippingHandler, { prefix: "shipping" });
 
 server.listen("3333", (error, address) => {
   if (error) {
