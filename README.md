@@ -1,6 +1,7 @@
 ## Talk TDD + Jest + Node
 
 Vamos contruir um endpoint que calcula o custo de uma entrega, **cobrindo nossa regra de negócios com testes unitários** e conhecendo alguns recursos do Jest para nos ajudar a testar **entrada e saída** de nossas funções.
+Vamos entender o que são **Mocks, Stubs e Spies** e como eles podem nos ajudar.
 
 ### Fluxo do negócio
 
