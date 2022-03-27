@@ -1,14 +1,11 @@
-import fastify from "fastify";
-import { ShippingHandler } from "./shipping/shipping-handler";
+import { build } from "./app";
 
-const server = fastify({
+const server = build({
   logger: {
     level: "info",
     prettyPrint: true,
   },
 });
-
-server.register(ShippingHandler, { prefix: "shipping" });
 
 server.listen("3333", (error, address) => {
   if (error) {
