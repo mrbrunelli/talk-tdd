@@ -1,7 +1,12 @@
 import fastify from "fastify";
 import { ShippingHandler } from "./shipping/shipping-handler";
 
-const server = fastify({ logger: true });
+const server = fastify({
+  logger: {
+    level: "info",
+    prettyPrint: true,
+  },
+});
 
 server.register(ShippingHandler, { prefix: "shipping" });
 
