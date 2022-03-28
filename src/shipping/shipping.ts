@@ -1,3 +1,5 @@
+import "reflect-metadata";
+import { injectable } from "tsyringe";
 import { CalculateShipping } from "./calculate-shipping";
 
 type ShippingInfoType = {
@@ -7,6 +9,7 @@ type ShippingInfoType = {
   rate: number;
 };
 
+@injectable()
 export class Shipping {
   constructor(private readonly calculateShipping: CalculateShipping) {}
 

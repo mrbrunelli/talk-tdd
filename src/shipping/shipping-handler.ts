@@ -1,12 +1,13 @@
+import "reflect-metadata";
+import { container } from "tsyringe";
 import { FastifyInstance, RouteShorthandOptions } from "fastify";
-import { CalculateShipping } from "./calculate-shipping";
 import { Shipping } from "./shipping";
 import {
   ShippingGetCostQueryStringSchema,
   ShippingGetCostQueryStringType,
 } from "./shipping-schema";
 
-const shipping = new Shipping(new CalculateShipping());
+const shipping = container.resolve(Shipping);
 
 const ShippingHandler = async (
   fastify: FastifyInstance,
