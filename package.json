@@ -14,7 +14,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fastify": "^3.27.4"
+    "fastify": "^3.27.4",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.6.0"
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
